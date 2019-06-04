@@ -1,0 +1,36 @@
+\documentclass[11pt]{book}
+    \usepackage[utf8]{inputenc}
+    \usepackage[margin=1in]{geometry}          
+    \usepackage{graphicx}
+    \usepackage{amsthm, amsmath, amssymb}
+    \usepackage{mathtools}
+    \usepackage{setspace}\onehalfspacing
+    \usepackage[loose,nice]{units} 
+    \usepackage{enumitem}
+    \usepackage{hyperref}
+    \hypersetup{
+        colorlinks,
+        citecolor=black,
+        filecolor=black,
+        linkcolor=black,
+        urlcolor=black
+    }
+    
+    \renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
+    \renewcommand{\vec}[1]{\mathbf{#1}}
+    \newcommand{\set}[1]{\mathbb{#1}}
+    \newcommand{\func}[5]{#1:#2\xrightarrow[#5]{#4}#3}
+    \newcommand{\contr}{\rightarrow\leftarrow}
+
+    \DeclareMathOperator{\Ima}{Im}
+
+    \newtheorem{thm}{Teorema}[section]
+    \newtheorem{lem}[thm]{Lema}
+    \newtheorem{prop}[thm]{Proposición}
+    \newtheorem*{cor}{Corolario}
+
+    \theoremstyle{definition}
+    \newtheorem{defn}{Definición}[section]
+    \newtheorem{obs}{Observación}[section]
+    \newtheorem{ejm}[thm]{Ejemplo:}
+    \newtheorem{eje}[thm]{Ejercicio:}
