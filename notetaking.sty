@@ -1,36 +1,77 @@
-\documentclass[11pt]{book}
-    \usepackage[utf8]{inputenc}
-    \usepackage[margin=1in]{geometry}          
-    \usepackage{graphicx}
-    \usepackage{amsthm, amsmath, amssymb}
-    \usepackage{mathtools}
-    \usepackage{setspace}\onehalfspacing
-    \usepackage[loose,nice]{units} 
-    \usepackage{enumitem}
-    \usepackage{hyperref}
-    \hypersetup{
-        colorlinks,
-        citecolor=black,
-        filecolor=black,
-        linkcolor=black,
-        urlcolor=black
+%\documentclass[12pt,letterpaper]{article}
+\RequirePackage{expl3}
+\RequirePackage[spanish]{babel}
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{graphicx}
+\RequirePackage{amsthm, amsmath, amssymb}
+\RequirePackage{mathrsfs}
+\RequirePackage{mathtools}
+\RequirePackage{setspace}\onehalfspacing
+\RequirePackage[loose,nice]{units}
+\RequirePackage{enumitem}\setlist[enumerate]{label= (\alph*)}
+\RequirePackage{hyperref}
+\RequirePackage{titling}
+\RequirePackage{xparse}
+\RequirePackage{etextools}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\set}[1]{\mathbb{#1}}
+\newcommand{\func}[5]{#1:#2\xrightarrow[#5]{#4}#3}
+\newcommand{\contr}{\rightarrow\leftarrow}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\BigO}[2][]{O_{#1}\paren{#2}}
+\newcommand{\ds}{\displaystyle}
+
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\rad}{rad}
+
+\newcounter{prob}[section]
+\newcounter{sol}[section]
+
+
+\NewDocumentEnvironment{sol}{O{\refstepcounter{sol}\thesol}}{
+    \medskip\noindent\textbf{Solución problema #1: }
+}{
+    \begin{flushright}
+        \(\blacksquare\)
+    \end{flushright}
+}
+
+
+\NewDocumentEnvironment{prob}{oo}{
+    \IfNoValueTF{#1}{
+        {\large\raggedleft\textbf{Problema \refstepcounter{prob}\theprob:}}\addcontentsline{toc}{section}{Problema \theprob}
+    }{
+        \ifblank{#1}{
+            {\large\raggedleft\textbf{Problema \refstepcounter{prob}\theprob:}}\addcontentsline{toc}{section}{Problema \theprob}
+        }{
+            {\large\raggedleft\textbf{Problema #1:}}\addcontentsline{toc}{section}{Problema #1}
+        }
+    }\unskip%
+    \IfValueT{#2}{
+        \xifstrcmp{\deblank{#2}}{1}{
+            (\deblank{#2} pt.)
+        }{
+            (\deblank{#2} pts.)
+        }
     }
-    
-    \renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
-    \renewcommand{\vec}[1]{\mathbf{#1}}
-    \newcommand{\set}[1]{\mathbb{#1}}
-    \newcommand{\func}[5]{#1:#2\xrightarrow[#5]{#4}#3}
-    \newcommand{\contr}{\rightarrow\leftarrow}
-
-    \DeclareMathOperator{\Ima}{Im}
-
-    \newtheorem{thm}{Teorema}[section]
-    \newtheorem{lem}[thm]{Lema}
-    \newtheorem{prop}[thm]{Proposición}
-    \newtheorem*{cor}{Corolario}
-
-    \theoremstyle{definition}
-    \newtheorem{defn}{Definición}[section]
-    \newtheorem{obs}{Observación}[section]
-    \newtheorem{ejm}[thm]{Ejemplo:}
-    \newtheorem{eje}[thm]{Ejercicio:}
+    \par\addvspace{-\parskip}\noindent
+}{}
