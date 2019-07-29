@@ -23,9 +23,9 @@
 
 \ProcessKeysOptions{notetaking / options}
 
-\LoadClass{article}
+\LoadClass[12pt,letterpaper]{article}
 
-\RequirePackage{notetaking}
+\RequirePackage{notetaking}M
 
 \ExplSyntaxOff
 
