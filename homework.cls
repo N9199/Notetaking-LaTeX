@@ -25,10 +25,9 @@
 
 \LoadClass[12pt,letterpaper]{article}
 
-\RequirePackage{notetaking}M
+\RequirePackage{notetaking}
 
 \ExplSyntaxOff
-
 
 \renewcommand{\maketitle}{
     \begin{titlepage}
