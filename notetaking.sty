@@ -1,5 +1,5 @@
-%\documentclass[12pt,letterpaper]{article}
 \RequirePackage{expl3}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage[spanish]{babel}
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{graphicx}
@@ -22,6 +22,9 @@
     urlcolor=black
 }
 
+\newcommand{\course}[1]{\def\thecourse{#1}}
+\newcommand{\gdate}[1]{\def\thegdate{#1}}
+
 \renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \newcommand{\set}[1]{\mathbb{#1}}
@@ -32,16 +35,27 @@
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
 \newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\angled}[1]{\left\langle#1\right\rangle}
 \newcommand{\BigO}[2][]{O_{#1}\paren{#2}}
 \newcommand{\ds}{\displaystyle}
-
-\renewcommand{\thesection}{}
-\renewcommand{\thesubsection}{}
 
 \DeclareMathOperator{\mcm}{mcm}
 \DeclareMathOperator{\cis}{cis}
 \DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\rad}{rad}
+
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{lem}[thm]{Lema}
+\newtheorem{prp}[thm]{Proposición}
+\newtheorem*{cor}{Corolario}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definición}[section]
+\newtheorem{ppty}[defn]{Propiedades}
+\newtheorem{obs}{Observación}[section]
+\newtheorem{ejm}{Ejemplo:}[section]
+\newtheorem{eje}{Ejercicio:}[section]
 
 \newcounter{prob}[section]
 \newcounter{sol}[section]

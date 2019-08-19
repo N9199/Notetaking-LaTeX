@@ -41,15 +41,13 @@
                     {\sc Pontificia Universidad Católica de Chile\\
                         Facultad de Matemáticas\\
                         Departamento de Matemática}\smallskip \\
-                    %\thegdate\\
+                    \thegdate\\
                 }
             \end{flushleft}
         \end{minipage}
         \vspace{2ex}
 
         {\Large \centerline{\bf \thetitle}}
-        {\large \centerline{\thecourse}}
-        \centerline{Fecha de Entrega: \thedate}
         \vfill
 
         \begin{flushright}

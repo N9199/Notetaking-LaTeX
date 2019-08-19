@@ -29,8 +29,11 @@
 
 \ExplSyntaxOff
 
+\setlist[enumerate]{label= \arabic*)}
+\pagenumbering{gobble}
+
 \renewcommand{\maketitle}{
-    \begin{titlepage}
+    {
         \begin{minipage}{2.5cm}
             \includegraphics[scale=0.25]{img/puc}
         \end{minipage}
@@ -45,16 +48,14 @@
                 }
             \end{flushleft}
         \end{minipage}
+        \begin{flushright}
+            Ayudante: Nicholas Mc-Donnell\\
+            Email: \url{namcdonnell@uc.cl}
+        \end{flushright}
         \vspace{2ex}
 
         {\Large \centerline{\bf \thetitle}}
         {\large \centerline{\thecourse}}
-        \centerline{Fecha de Entrega: \thedate}
-        \vfill
-
-        \begin{flushright}
-            {\Large\theauthor}% Part of the redo
-        \end{flushright}
-
-    \end{titlepage}
+        \centerline{Fecha: \thedate}
+    }
 }
