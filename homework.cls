@@ -53,7 +53,7 @@
         \vfill
 
         \begin{flushright}
-            {\Large\theauthor}% Part of the redo
+            {\Large\theauthor}
         \end{flushright}
 
     \end{titlepage}
