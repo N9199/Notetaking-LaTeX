@@ -47,8 +47,8 @@
         \end{minipage}
         \vspace{2ex}
 
-        {\Large \centerline{\bf \thetitle}}
-        {\large \centerline{\thecourse}}
+        {\centering\noindent\Large{\bf \thetitle}\par}
+        {\centering\noindent\large {\thecourse}\par}
         \centerline{Fecha de Entrega: \thedate}
         \vfill
 

@@ -13,6 +13,7 @@
 \RequirePackage{titling}
 \RequirePackage{xparse}
 \RequirePackage{etextools}
+\RequirePackage{tikz}
 
 \hypersetup{
     colorlinks,
@@ -30,6 +31,7 @@
 
 \renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
 \renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\Re}{\text{Re}}
 \newcommand{\set}[1]{\mathbb{#1}}
 \newcommand{\func}[5]{#1:#2\xrightarrow[#5]{#4}#3}
 \newcommand{\contr}{\rightarrow\leftarrow}
@@ -39,6 +41,7 @@
 \newcommand{\norm}[1]{\left\|#1\right\|}
 \newcommand{\paren}[1]{\left(#1\right)}
 \newcommand{\angled}[1]{\left\langle#1\right\rangle}
+\newcommand{\bracket}[1]{\left\{#1\right\}}
 \newcommand{\BigO}[2][]{O_{#1}\paren{#2}}
 \newcommand{\ds}{\displaystyle}
 
