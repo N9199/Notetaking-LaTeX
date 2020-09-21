@@ -1,5 +1,5 @@
 \RequirePackage {expl3}
-\ProvidesExplClass{homework}{2019/07/28}{0.0.1}{ Template for math homework }
+\ProvidesExplClass{ayudantia}{2020/08/17}{0.0.3}{ Class }
 
 \ExplSyntaxOn
 

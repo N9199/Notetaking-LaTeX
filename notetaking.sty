@@ -14,7 +14,8 @@
 \RequirePackage{xparse}
 \RequirePackage{etextools}
 \RequirePackage{tikz}
-
+\RequirePackage{siunitx}
+\RequirePackage{comment}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -67,6 +68,7 @@
 \newcounter{sol}[section]
 
 
+
 \NewDocumentEnvironment{sol}{O{\refstepcounter{sol}\thesol}}{
     \medskip\noindent\textbf{Solución problema #1: }
 }{
@@ -74,8 +76,16 @@
         \(\blacksquare\)
     \end{flushright}
 }
+\ExplSyntaxOn
+\tl_new:N \l_notetaking_extra_tl
+\tl_new:N \l_notetaking_score_tl
 
+\keys_define:nn {notetaking / prob}{
+    extra .tl_set:N = \l_notetaking_extra_tl,
+    score .tl_set:N = \l_notetaking_extra_tl,
+    }
 
+    \ExplSyntaxOff
 \NewDocumentEnvironment{prob}{oo}{
     \IfNoValueTF{#1}{
         {\large\raggedleft\textbf{Problema \refstepcounter{prob}\theprob:}}\addcontentsline{toc}{section}{Problema \theprob}
@@ -94,4 +104,6 @@
         }
     }
     \par\addvspace{-\parskip}\noindent
-}{}
+}{
+    \par\addvspace{-\parskip}\noindent
+    }
