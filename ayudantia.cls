@@ -42,9 +42,9 @@
                 \raggedright
                 {\noindent
                     {\sc Pontificia Universidad Católica de Chile\\
-                        Facultad de Matemáticas\\
-                        Departamento de Matemática}\smallskip \\
-                    %\thegdate\\
+                    \thefaculty\\
+                    \thedepartment\\
+                    }
                 }
             \end{flushleft}
         \end{minipage}
@@ -54,7 +54,8 @@
         \end{flushright}
         \vspace{2ex}
 
-        {\Large \centerline{\bf \thetitle}}
+        {\LARGE \centerline{\bf \thetitle}}
+        {\Large \centerline{\thesubtitle}}
         {\large \centerline{\thecourse}}
         \centerline{Fecha: \thedate}
     }
