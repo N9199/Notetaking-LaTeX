@@ -91,12 +91,12 @@
     \ExplSyntaxOff
 \NewDocumentEnvironment{prob}{oo}{
     \IfNoValueTF{#1}{
-        {\large\raggedleft\textbf{Problema \refstepcounter{prob}\theprob:}}\addcontentsline{toc}{section}{Problema \theprob}
+        {\raggedleft\textbf{Problema \refstepcounter{prob}\theprob:}}\addcontentsline{toc}{section}{Problema \theprob}
     }{
         \ifblank{#1}{
-            {\large\raggedleft\textbf{Problema \refstepcounter{prob}\theprob:}}\addcontentsline{toc}{section}{Problema \theprob}
+            {\raggedleft\textbf{Problema \refstepcounter{prob}\theprob:}}\addcontentsline{toc}{section}{Problema \theprob}
         }{
-            {\large\raggedleft\textbf{Problema #1:}}\addcontentsline{toc}{section}{Problema #1}
+            {\raggedleft\textbf{Problema #1:}}\addcontentsline{toc}{section}{Problema #1}
         }
     }\unskip%
     \IfValueT{#2}{
